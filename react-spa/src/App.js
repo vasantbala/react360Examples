@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom';
 
 
@@ -16,28 +15,14 @@ function App() {
   return (    
     <div>
     <HeaderContainer/>
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/movie">Movie</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <Switch>
+    <Switch>
         <Route path='/movie'>
           <MovieContainer/>
         </Route>
-        <Route path='/'>
+        <Route exact path='/'>
           <WelcomeContainer/>
         </Route>
-      </Switch>
-    </Router>
+    </Switch>
     </div>
   );
 }
